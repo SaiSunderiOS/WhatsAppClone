@@ -3,6 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -309,7 +310,9 @@
                                         </constraints>
                                         <color key="tintColor" systemColor="systemGreenColor"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="plus.circle.dashed" catalog="system"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="plus.circle.dashed" catalog="system" symbolScale="large"/>
+                                        </state>
                                         <connections>
                                             <action selector="addContactBtn:" destination="SyA-WK-1Hj" eventType="touchUpInside" id="5EE-1q-XkY"/>
                                         </connections>
@@ -321,30 +324,20 @@
                                         </constraints>
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="camera.fill" catalog="system"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u3l-UO-aDA">
-                                        <rect key="frame" x="195" y="0.0" width="40" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="NDL-a3-Z2d"/>
-                                        </constraints>
-                                        <color key="tintColor" systemColor="systemIndigoColor"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="personalhotspot.circle" catalog="system"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="camera.fill" catalog="system" symbolScale="large"/>
+                                        </state>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="mOC-VK-ggj" firstAttribute="top" secondItem="TB7-iB-3Pc" secondAttribute="top" id="92i-Hz-9EJ"/>
                                     <constraint firstAttribute="bottom" secondItem="vhv-h2-yE1" secondAttribute="bottom" id="CNp-2o-lCh"/>
-                                    <constraint firstItem="mOC-VK-ggj" firstAttribute="leading" secondItem="u3l-UO-aDA" secondAttribute="trailing" constant="10" id="ERV-el-TLO"/>
                                     <constraint firstItem="W12-LB-g8C" firstAttribute="leading" secondItem="mOC-VK-ggj" secondAttribute="trailing" constant="10" id="F7u-KB-YDg"/>
                                     <constraint firstItem="vhv-h2-yE1" firstAttribute="top" secondItem="TB7-iB-3Pc" secondAttribute="top" id="OeF-7s-1hA"/>
                                     <constraint firstAttribute="bottom" secondItem="mOC-VK-ggj" secondAttribute="bottom" id="XP9-9T-x8L"/>
                                     <constraint firstAttribute="trailing" secondItem="W12-LB-g8C" secondAttribute="trailing" id="eS5-ha-TvQ"/>
-                                    <constraint firstItem="u3l-UO-aDA" firstAttribute="top" secondItem="TB7-iB-3Pc" secondAttribute="top" id="hy9-kU-x9M"/>
                                     <constraint firstAttribute="bottom" secondItem="W12-LB-g8C" secondAttribute="bottom" id="hzg-pj-tw1"/>
-                                    <constraint firstAttribute="bottom" secondItem="u3l-UO-aDA" secondAttribute="bottom" id="jhU-NC-zv3"/>
                                     <constraint firstItem="W12-LB-g8C" firstAttribute="top" secondItem="TB7-iB-3Pc" secondAttribute="top" id="pax-NR-sDK"/>
                                     <constraint firstItem="vhv-h2-yE1" firstAttribute="leading" secondItem="TB7-iB-3Pc" secondAttribute="leading" id="uMa-df-d8w"/>
                                     <constraint firstAttribute="height" constant="40" id="xLd-By-ikG"/>
@@ -425,18 +418,55 @@
                                 <rect key="frame" x="0.0" y="210" width="375" height="408"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BKb-uF-mbQ">
+                                <rect key="frame" x="0.0" y="200" width="375" height="418"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Chats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RdA-m3-iTw">
+                                        <rect key="frame" x="40" y="50" width="295" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="AHg-EI-d6v"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on &quot;Plus&quot; button on top right to add new contacts" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e96-gP-0Zk">
+                                        <rect key="frame" x="40" y="120" width="295" height="140"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="140" id="pUA-KD-5PS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="e96-gP-0Zk" secondAttribute="trailing" constant="40" id="1TN-71-FlH"/>
+                                    <constraint firstAttribute="trailing" secondItem="RdA-m3-iTw" secondAttribute="trailing" constant="40" id="70c-53-jYe"/>
+                                    <constraint firstItem="e96-gP-0Zk" firstAttribute="centerX" secondItem="BKb-uF-mbQ" secondAttribute="centerX" id="BxB-yI-fmm"/>
+                                    <constraint firstItem="RdA-m3-iTw" firstAttribute="top" secondItem="BKb-uF-mbQ" secondAttribute="top" constant="50" id="Dsq-yv-b79"/>
+                                    <constraint firstItem="e96-gP-0Zk" firstAttribute="top" secondItem="RdA-m3-iTw" secondAttribute="bottom" constant="20" id="U4J-Aj-WRo"/>
+                                    <constraint firstItem="RdA-m3-iTw" firstAttribute="centerX" secondItem="BKb-uF-mbQ" secondAttribute="centerX" id="Ydo-Ak-opU"/>
+                                    <constraint firstItem="RdA-m3-iTw" firstAttribute="leading" secondItem="BKb-uF-mbQ" secondAttribute="leading" constant="40" id="aW3-pM-8oS"/>
+                                    <constraint firstItem="e96-gP-0Zk" firstAttribute="leading" secondItem="BKb-uF-mbQ" secondAttribute="leading" constant="40" id="koB-1o-5hf"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vd1-gr-POo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Vd1-gr-POo" firstAttribute="trailing" secondItem="edu-hF-08G" secondAttribute="trailing" id="1h8-w0-Aks"/>
                             <constraint firstItem="TB7-iB-3Pc" firstAttribute="top" secondItem="Vd1-gr-POo" secondAttribute="top" id="1ps-9b-0YQ"/>
+                            <constraint firstItem="BKb-uF-mbQ" firstAttribute="leading" secondItem="Vd1-gr-POo" secondAttribute="leading" id="8RR-M1-LBg"/>
                             <constraint firstItem="ycF-gB-obM" firstAttribute="top" secondItem="oyP-7J-uq1" secondAttribute="bottom" constant="10" id="JIB-Y2-fSn"/>
                             <constraint firstItem="1kZ-Fg-moo" firstAttribute="leading" secondItem="Vd1-gr-POo" secondAttribute="leading" constant="20" id="M5S-Rk-mvd"/>
                             <constraint firstItem="TB7-iB-3Pc" firstAttribute="leading" secondItem="Vd1-gr-POo" secondAttribute="leading" constant="20" id="MC3-fo-hZb"/>
+                            <constraint firstItem="BKb-uF-mbQ" firstAttribute="top" secondItem="1kZ-Fg-moo" secondAttribute="bottom" id="OWl-LJ-3GS"/>
                             <constraint firstItem="2sB-Du-EPn" firstAttribute="top" secondItem="ycF-gB-obM" secondAttribute="bottom" constant="10" id="P0r-o8-Su6"/>
                             <constraint firstItem="Vd1-gr-POo" firstAttribute="bottom" secondItem="edu-hF-08G" secondAttribute="bottom" id="TF1-EM-dcg"/>
                             <constraint firstItem="ycF-gB-obM" firstAttribute="leading" secondItem="Vd1-gr-POo" secondAttribute="leading" constant="20" id="UbC-OD-jbZ"/>
+                            <constraint firstItem="BKb-uF-mbQ" firstAttribute="trailing" secondItem="Vd1-gr-POo" secondAttribute="trailing" id="UoR-3I-R3X"/>
                             <constraint firstItem="q5l-Ii-XiX" firstAttribute="top" secondItem="ycF-gB-obM" secondAttribute="bottom" constant="10" id="Yb8-7F-d1r"/>
                             <constraint firstItem="Vd1-gr-POo" firstAttribute="trailing" secondItem="ycF-gB-obM" secondAttribute="trailing" constant="20" id="dS9-q6-ZDc"/>
                             <constraint firstItem="edu-hF-08G" firstAttribute="top" secondItem="q5l-Ii-XiX" secondAttribute="bottom" constant="10" id="eaU-W3-Gv9"/>
@@ -444,6 +474,7 @@
                             <constraint firstItem="TB7-iB-3Pc" firstAttribute="top" secondItem="Vd1-gr-POo" secondAttribute="top" id="fCp-rE-FRQ"/>
                             <constraint firstItem="oyP-7J-uq1" firstAttribute="leading" secondItem="Vd1-gr-POo" secondAttribute="leading" constant="20" id="fpk-dK-hnw"/>
                             <constraint firstItem="oyP-7J-uq1" firstAttribute="top" secondItem="TB7-iB-3Pc" secondAttribute="bottom" constant="10" id="hrm-Se-pLu"/>
+                            <constraint firstItem="BKb-uF-mbQ" firstAttribute="bottom" secondItem="Vd1-gr-POo" secondAttribute="bottom" id="jWT-oL-6m1"/>
                             <constraint firstItem="q5l-Ii-XiX" firstAttribute="leading" secondItem="1kZ-Fg-moo" secondAttribute="trailing" constant="10" id="lOf-Xp-wfh"/>
                             <constraint firstItem="Vd1-gr-POo" firstAttribute="trailing" secondItem="TB7-iB-3Pc" secondAttribute="trailing" constant="20" id="m2Y-Tv-76o"/>
                             <constraint firstItem="2sB-Du-EPn" firstAttribute="leading" secondItem="q5l-Ii-XiX" secondAttribute="trailing" constant="10" id="nre-qr-XkN"/>
@@ -453,6 +484,7 @@
                     <tabBarItem key="tabBarItem" title="Chats" image="message" catalog="system" id="dYU-JU-YB4"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="noChatsView" destination="BKb-uF-mbQ" id="ZmO-gv-LXI"/>
                         <outlet property="tableView" destination="edu-hF-08G" id="p7j-1W-WWe"/>
                     </connections>
                 </viewController>
@@ -532,7 +564,9 @@
                                             <constraint firstAttribute="width" constant="40" id="lIz-da-Lag"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="camera.fill" catalog="system"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="camera.fill" catalog="system" symbolScale="large"/>
+                                        </state>
                                         <connections>
                                             <action selector="profileIMgBtnTapped:" destination="7aU-sc-HA6" eventType="touchUpInside" id="hKR-vE-hJb"/>
                                         </connections>
@@ -1161,7 +1195,6 @@
         <image name="mic" catalog="system" width="110" height="128"/>
         <image name="person.3" catalog="system" width="128" height="66"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
-        <image name="personalhotspot.circle" catalog="system" width="128" height="123"/>
         <image name="phone" catalog="system" width="128" height="115"/>
         <image name="phone.fill" catalog="system" width="128" height="114"/>
         <image name="plus" catalog="system" width="128" height="113"/>
@@ -1192,9 +1225,6 @@
         </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tableBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
