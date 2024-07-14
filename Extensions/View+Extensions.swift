@@ -40,3 +40,56 @@ extension UIView {
         }
     }
 }
+
+
+class PlaceholderTextView: UITextView {
+    
+    private let placeholderLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor.lightGray
+        return label
+    }()
+    
+    var placeholder: String? {
+        get {
+            return placeholderLabel.text
+        }
+        set {
+            placeholderLabel.text = newValue
+            updatePlaceholderVisibility()
+        }
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        commonInit()
+    }
+    
+    override init(frame: CGRect, textContainer: NSTextContainer?) {
+        super.init(frame: frame, textContainer: textContainer)
+        commonInit()
+    }
+    
+    private func commonInit() {
+        addSubview(placeholderLabel)
+        placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
+        placeholderLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
+        placeholderLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5).isActive = true
+        placeholderLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5).isActive = true
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(textDidChange), name: UITextView.textDidChangeNotification, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc private func textDidChange() {
+        updatePlaceholderVisibility()
+    }
+    
+    private func updatePlaceholderVisibility() {
+        placeholderLabel.isHidden = !text.isEmpty
+    }
+}
+

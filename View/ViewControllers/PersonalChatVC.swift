@@ -10,20 +10,18 @@ import AVFoundation
 import CoreData
 
 class PersonalChatVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-    
-    
+
     var contactsInfo: NewContacts?
     var messages: [Messages] = []
     
     @IBOutlet weak var userName : UILabel!
     @IBOutlet weak var profileImg : UIImageView!
     @IBOutlet weak var tableView : UITableView!
-    @IBOutlet weak var messageText : UITextField!
-    
+    @IBOutlet weak var messageText : PlaceholderTextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        Setup UserInfo
+        //        Setup UserInfo
         if let data = contactsInfo {
             userName.text = "\(data.firstName ?? "") \(data.lastName ?? "")"
             if let imageData = data.profileImg, let image = UIImage(data: imageData) {
@@ -33,13 +31,13 @@ class PersonalChatVC: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
         }
         
-// TableView delegate, datasource, register
+        // TableView delegate, datasource, register
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "TextMessageCell", bundle: nil), forCellReuseIdentifier: "TextMessageCell")
         tableView.register(UINib(nibName: "ImageViewCell", bundle: nil), forCellReuseIdentifier: "ImageViewCell")
         
-//        TapGesture
+        //        TapGesture
         let profileImgTapGesture = UITapGestureRecognizer(target: self, action: #selector(profileImgTapped))
         profileImg.isUserInteractionEnabled = true
         profileImg.addGestureRecognizer(profileImgTapGesture)
@@ -49,6 +47,9 @@ class PersonalChatVC: UIViewController, UIImagePickerControllerDelegate, UINavig
         userName.addGestureRecognizer(userNameTapGesture)
         
         fetchMessages()
+        
+        messageText.placeholder = "Enter your text here..."
+
         
     }
     
