@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ChatsCell: UITableViewCell {
+class ChatsCell: UITableViewCell   {
 
     @IBOutlet weak var profileImg : UIImageView!
     @IBOutlet weak var userNameLbl : UILabel!
